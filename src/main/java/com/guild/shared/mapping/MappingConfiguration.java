@@ -2,6 +2,8 @@ package com.guild.shared.mapping;
 
 import com.guild.games.mapping.GameMapper;
 import com.guild.games.mapping.GenderMapper;
+import com.guild.guild.mapping.GuildMapper;
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -19,6 +21,10 @@ public class MappingConfiguration {
     @Bean
     public GenderMapper genderMapper(){
         return new GenderMapper();
+    }
+    @Bean
+    public GuildMapper guildMapper(){
+        return new GuildMapper();
     }
 
 }
