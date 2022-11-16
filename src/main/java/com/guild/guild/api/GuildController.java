@@ -46,9 +46,14 @@ public class GuildController {
     }
 
     @GetMapping("gameId/{gameId}")
-    public List<GuildResource> getByGenderId(@PathVariable("gameId") Long gameId) {
+    public List<GuildResource> getByGameId(@PathVariable("gameId") Long gameId) {
 
         return mapper.modelListToResource(service.getByGameId(gameId));
+    }
+
+    @GetMapping("gameName/{gameName}")
+    public List<GuildResource> getByGameName(@PathVariable("gameName") String gameName){
+        return mapper.modelListToResource(service.getByGameName(gameName));
     }
 
     @PostMapping

@@ -11,6 +11,7 @@ public interface GuildService {
     List<Guild> getAll();
     List<Guild> getByGameId(Long gameId);
     List<Guild> getByName(String name);
+    List<Guild> getByGameName(String gameName);
     Guild getById(Long id);
     Guild create(Guild request);
     Guild update(Long id, Guild request);
