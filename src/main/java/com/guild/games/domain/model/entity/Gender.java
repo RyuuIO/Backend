@@ -27,5 +27,4 @@ public class Gender extends AuditModel {
 
     @OneToMany(mappedBy = "gender")
     private List<Game> gameList;
-
 }
