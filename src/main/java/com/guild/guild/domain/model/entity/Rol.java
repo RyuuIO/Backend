@@ -38,5 +38,4 @@ public class Rol extends AuditModel{
 
     @OneToMany(mappedBy = "rol")
     private List<Member> members;
-    //TODO: Implement enpoints
 }

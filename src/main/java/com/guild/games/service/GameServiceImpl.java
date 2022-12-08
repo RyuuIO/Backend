@@ -79,7 +79,7 @@ public class GameServiceImpl implements GameService {
             throw new ResourceNotFoundException(ENTITY, id);
 
         return repository.findById(id).map(
-                game -> repository.save(request
+                game -> repository.save(game
                         .withName(request.getName())
                         .withImage(request.getImage())
                 )).orElseThrow(

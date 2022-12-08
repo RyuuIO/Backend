@@ -59,7 +59,7 @@ public class GenderServiceImpl implements GenderService {
             throw new ResourceNotFoundException(ENTITY, id);
 
         return repository.findById(id).map(
-                gender -> repository.save(request
+                gender -> repository.save(gender
                         .withName(request.getName())
                 )).orElseThrow(
                 ()->new ResourceNotFoundException(ENTITY, id)

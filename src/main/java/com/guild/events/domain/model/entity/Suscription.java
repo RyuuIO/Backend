@@ -1,4 +1,4 @@
-package com.guild.guild.domain.model.entity;
+package com.guild.events.domain.model.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -20,26 +20,23 @@ import lombok.With;
 
 @Getter
 @Setter
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 @With
 @Entity
-@Table(name = "members")
-public class Member extends AuditModel {
-    
+@Table(name = "suscriptions")
+public class Suscription extends AuditModel{
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private long id;
+
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "event_id", nullable = true)
+    private Happening event = null;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "user_id", nullable = true)
-    private Player player;
-
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "guild_id", nullable = true)
-    private Guild guild = null;
-
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "rol_id", nullable = true)
-    private Rol rol;
+    private Player player = null;
+    
 }

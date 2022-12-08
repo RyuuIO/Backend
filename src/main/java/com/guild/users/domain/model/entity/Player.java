@@ -6,13 +6,12 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
-import com.guild.events.domain.model.entity.Happening;
+import com.guild.events.domain.model.entity.Suscription;
 import com.guild.guild.domain.model.entity.Member;
 import com.guild.shared.domain.model.AuditModel;
 
@@ -54,7 +53,8 @@ public class Player extends AuditModel {
     @OneToMany(mappedBy = "player")
     private List<Member> members;
 
-    @ManyToMany(mappedBy = "players")
-    private List<Happening> events;
+    @OneToMany(mappedBy = "player")
+    private List<Suscription> suscriptions;
+
     //TODO: Implement enpoints
 }

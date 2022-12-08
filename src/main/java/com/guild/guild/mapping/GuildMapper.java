@@ -26,5 +26,5 @@ public class GuildMapper implements Serializable {
     public List<GuildResource> modelListToResource(List<Guild> modelList){
         return mapper.mapList(modelList, GuildResource.class);
     }
-    
+
 }

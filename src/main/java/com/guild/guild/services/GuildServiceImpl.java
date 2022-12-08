@@ -100,7 +100,7 @@ public class GuildServiceImpl implements GuildService {
             throw new ResourceNotFoundException(ENTITY, id);
 
         return repository.findById(id).map(
-                guild -> repository.save(request
+                guild -> repository.save(guild
                         .withName(request.getName())
                         .withDescription(request.getDescription())
                         .withImage(request.getImage())
