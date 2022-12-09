@@ -1,6 +1,7 @@
 package com.guild.shared.mapping;
 
 import com.guild.events.mapping.EventMapper;
+import com.guild.events.mapping.SuscriptionMapper;
 import com.guild.games.mapping.GameMapper;
 import com.guild.games.mapping.GenderMapper;
 import com.guild.guild.mapping.GuildMapper;
@@ -42,6 +43,8 @@ public class MappingConfiguration {
         return new EventMapper();
     }
 
-    //TODO: implement Suscription mapper
-
+    @Bean
+    public SuscriptionMapper suscriptionMapper(){
+        return new SuscriptionMapper();
+    }
 }

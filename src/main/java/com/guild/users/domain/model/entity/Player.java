@@ -56,5 +56,5 @@ public class Player extends AuditModel {
     @OneToMany(mappedBy = "player")
     private List<Suscription> suscriptions;
 
-    //TODO: Implement enpoints
+    //TODO: Implement security
 }
